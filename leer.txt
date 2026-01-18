@@ -1,0 +1,15 @@
+En la documentación he encontrado algunos errores en la forma de consumir los endpoints. Por ejemplo, hay algunos que no indican que se debe poner la autorización en *Bearer*, pero en realidad sí la requieren; en caso de no hacerlo, se obtiene un estado 401 no autorizado. He seguido todos los pasos en el método de *create client*, pero me da error 500, que corresponde a un error interno del servidor y no proporciona información suficiente para entender lo que está ocurriendo, ya que el 500 no es un error del cliente. 
+Programé el hook para el método *delete* pero no lo consumí. El código aún es 
+mejorable, ya que se podría fragmentar los componentes para que las vistas queden 
+más limpias, además de utilizar react developer tools para observar el consumo 
+de datos en caché y visualizar los componentes que se renderizan de forma innecesaria,
+ lo cual en la mayoría de los casos se resuelve con `memo`, comparando los prevParams 
+ con los nextParams.  
+
+Los mensajes de *alert* no deberían mostrarse en una aplicación real, pero los utilizo 
+en esta porque es el método más sencillo y rápido; en un caso real debería emplearse 
+un modal. Al mostrar estos mensajes lo hago enseñando el estado de la respuesta del 
+servidor, aunque esto tampoco debería hacerse en producción porque resulta agresivo
+ para el usuario. Lo correcto sería mostrar un texto más amigable, por ejemplo: para 
+ un 404, “Error forbidden, ruta no encontrada”; para un 500, “Ha ocurrido un problema
+ con el servidor, por favor intente más tarde”.
