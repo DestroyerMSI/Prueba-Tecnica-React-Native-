@@ -114,7 +114,7 @@ export default function Client_Consultant() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>{navigate.reset({index:0,routes: [{ name: "Home" }]})}}>
           <Image
             source={require('../../assets/casa.png')}
             style={styles.img_icon}
